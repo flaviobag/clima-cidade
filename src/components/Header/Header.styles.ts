@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.primary};
