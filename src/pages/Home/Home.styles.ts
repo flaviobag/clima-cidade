@@ -11,11 +11,11 @@ export const Title = styled.text`
   letter-spacing: 1px;
 `;
 
-export const DivLine = styled.div`
-  height: 2px;
+export const Line = styled.div`
   width: 100%;
+  height: 1px;
+  margin: 1rem 0;
   background-color: rgb(255, 233, 199);
-  margin: 100px;
 `;
 
 export const Main = styled.main`
