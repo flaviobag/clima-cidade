@@ -1,18 +1,6 @@
 import styled from 'styled-components';
 import { ReactComponent as search } from '../../assets/search.svg';
 
-export const StyleInput = styled.input`
-  display: flex;
-  align-items: center;
-  height: 50px;
-  width: 400px;
-  border: none;
-  font-size: 25px;
-`;
-export const StyleSearch = styled.div`
-  display: flex;
-`;
-
 export const Button = styled.button`
   background-color: white;
   border: none;
@@ -25,4 +13,17 @@ export const Button = styled.button`
 export const Icon = styled(search)`
   width: 20px;
   height: 20px;
+`;
+
+export const Input = styled.input`
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  width: 400px;
+  border-radius: 0;
+  border: none;
+`;
+
+export const Form = styled.form`
+  margin-top: 1rem;
+  position: relative;
 `;

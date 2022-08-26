@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import Card from '../../components/Card';
+import Search from '../../components/Input/Input';
 import { City } from '../../types/city';
-import { Line, Title } from './Home.styles';
+import { Line, Main, Title } from './Home.styles';
 import Table from './Table';
 
 const cities = [
@@ -97,8 +99,8 @@ const TableWrapper = styled.div`
 `;
 
 const Home = () => {
-  const [, setSelectedCity] = React.useState<City | undefined>(undefined);
-  const [searchTerm] = React.useState('');
+  const [selectedCity, setSelectedCity] = React.useState<City | undefined>(undefined);
+  const [searchTerm, setSearchTerm] = React.useState('');
   const capitais = cities.filter((city) => city.capital);
   const halfLength = capitais.length / 2;
 
@@ -114,9 +116,16 @@ const Home = () => {
   }, [searchTerm]);
 
   return (
-    <div>
+    <Main>
       <Title>Previsão do tempo</Title>
-
+      {selectedCity && <Card city={selectedCity} />}
+      <Search
+        label='Insira aqui o nome da cidade'
+        name='search'
+        id='search'
+        submitSearch={setSearchTerm}
+        type=''
+      />
       <Line />
 
       <Title>Capitais</Title>
@@ -124,7 +133,7 @@ const Home = () => {
         <Table capitais={capitais.slice(0, halfLength)} />
         <Table capitais={capitais.slice(halfLength, capitais.length)} />
       </TableWrapper>
-    </div>
+    </Main>
   );
 };
 

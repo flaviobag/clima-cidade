@@ -1,28 +1,35 @@
-import React from 'react';
-import { Button, Icon, StyleInput, StyleSearch } from './Input.styles';
+import React, { SyntheticEvent } from 'react';
+import { Form, Icon, Input } from './Input.styles';
 
-type InputTypes = {
-  types: string;
+type SearchProps = {
+  label: string;
   name: string;
+  id: string;
+  type: string;
+  submitSearch: (term: string) => void;
 };
 
-const Input = ({ types, name }: InputTypes) => {
+const Search: React.FC<SearchProps> = ({ label, name, id, type = 'text', submitSearch }) => {
   const [value, setValue] = React.useState('');
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    submitSearch(value);
+  };
 
   return (
-    <StyleSearch>
-      <StyleInput
-        type={types}
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-        placeholder='Digite o nome da cidade'
+    <Form onSubmit={handleSubmit}>
+      <Input
+        id={id}
         name={name}
+        type={type}
+        placeholder={label}
+        aria-label={label}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
-      <Button>
-        <Icon />
-      </Button>
-    </StyleSearch>
+      <Icon />
+    </Form>
   );
 };
 
-export default Input;
+export default Search;
