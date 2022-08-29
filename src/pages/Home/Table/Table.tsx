@@ -19,6 +19,7 @@ const TableRow = styled.tr`
   display: grid;
   gap: 0.25rem;
   grid-template-columns: 1fr 1fr 3fr;
+  padding-bottom: 20px;
 `;
 
 const Table: React.FC<{ capitais: Array<City> }> = ({ capitais }) => (

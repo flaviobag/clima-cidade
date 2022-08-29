@@ -1,18 +1,13 @@
 import styled from 'styled-components';
 import { ReactComponent as search } from '../../assets/search.svg';
 
-export const Button = styled.button`
-  background-color: white;
-  border: none;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 export const Icon = styled(search)`
-  width: 20px;
-  height: 20px;
+  width: 1rem;
+  height: 1rem;
+  background-color: transparent;
+  position: absolute;
+  top: calc(50% - 8px);
+  right: 0.5rem;
 `;
 
 export const Input = styled.input`

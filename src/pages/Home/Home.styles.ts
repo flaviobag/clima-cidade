@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
-export const Title = styled.text`
+export const Title = styled.h1`
   color: white;
-  font-size: 70px;
+  font-size: 40px;
   font-weight: bold;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 6rem;
+  padding: 2rem;
+  letter-spacing: 1px;
+`;
+export const Small = styled.h2`
+  align-items: left;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 2rem;
   letter-spacing: 1px;
 `;
 
@@ -25,4 +30,8 @@ export const Main = styled.main`
   flex-grow: 1;
   justify-content: center;
   max-width: 50vw;
+`;
+
+export const Sub = styled.div`
+  align-items: left;
 `;

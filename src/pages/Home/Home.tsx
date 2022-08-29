@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Card from '../../components/Card';
 import Search from '../../components/Input/Input';
 import { City } from '../../types/city';
-import { Line, Main, Title } from './Home.styles';
+import { Line, Main, Small, Sub, Title } from './Home.styles';
 import Table from './Table';
 
 const cities = [
@@ -117,7 +117,7 @@ const Home = () => {
 
   return (
     <Main>
-      <Title>Previsão do tempo</Title>
+      <Title as='h2'>Previsão do tempo</Title>
       {selectedCity && <Card city={selectedCity} />}
       <Search
         label='Insira aqui o nome da cidade'
@@ -127,12 +127,13 @@ const Home = () => {
         type=''
       />
       <Line />
-
-      <Title>Capitais</Title>
-      <TableWrapper>
-        <Table capitais={capitais.slice(0, halfLength)} />
-        <Table capitais={capitais.slice(halfLength, capitais.length)} />
-      </TableWrapper>
+      <Sub>
+        <Small>Capitais</Small>
+        <TableWrapper>
+          <Table capitais={capitais.slice(0, halfLength)} />
+          <Table capitais={capitais.slice(halfLength, capitais.length)} />
+        </TableWrapper>
+      </Sub>
     </Main>
   );
 };
