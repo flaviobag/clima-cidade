@@ -13,6 +13,7 @@ export const Small = styled.h2`
   font-size: 30px;
   font-weight: bold;
   padding: 2rem;
+  padding-left: 0;
   letter-spacing: 1px;
 `;
 
